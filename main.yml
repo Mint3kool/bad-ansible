@@ -89,7 +89,7 @@
   become: true
 
   tasks:
-  - name: create ansible tomcat directory
+  - name: create ansible tomcat directory on app1
     file:
       path: /usr/share/tomcat/webapps/ansible
       state: directory
@@ -104,6 +104,10 @@
   become: true
 
   tasks:
+  - name: create ansible tomcat directory on app2
+    file:
+      path: /usr/share/tomcat/webapps/ansible
+      state: directory
   - name: copy static index.html to tomcat webapps/ansible/index.html
     template:
       src: index.html.app2
